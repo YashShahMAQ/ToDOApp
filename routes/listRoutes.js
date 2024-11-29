@@ -4,6 +4,7 @@ const List = require('../models/List');
 
 const router = express.Router();
 
+// Get all lists
 router.get("/lists", authMiddleware, async (req, res) => {
     try {
         console.log("Debugging the user id");
@@ -17,6 +18,7 @@ router.get("/lists", authMiddleware, async (req, res) => {
     }
 });
 
+// Create a new list
 router.post("/lists", authMiddleware, async (req, res) => {
     try{
         const {name} = req.body;
@@ -38,6 +40,7 @@ router.post("/lists", authMiddleware, async (req, res) => {
     }
 });
 
+// Update a list
 router.put("/lists/:id", authMiddleware, async (req, res) => {
     try{
         const {id} = req.params;
@@ -64,6 +67,7 @@ router.put("/lists/:id", authMiddleware, async (req, res) => {
     }
 });
 
+// Delete a list
 router.delete("/lists/:id", authMiddleware, async (req, res) => {
     try{
         const {id} = req.params;

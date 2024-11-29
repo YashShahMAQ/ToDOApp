@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+//List Schema
+//
 const ListSchema = new mongoose.Schema(
     {
         userId: {

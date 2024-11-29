@@ -5,6 +5,7 @@ const User = require('../models/User');
 
 const router = express.Router();
 
+// This route is used to check if username and password are valid, if yes, then a JWT token is returned
 router.post("/login", async (req, res) => {
     const { username, password } = req.body;
 

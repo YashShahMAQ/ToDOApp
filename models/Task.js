@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+//Task Schema
+//Defines the structure of the Task collection
 const TaskSchema = new mongoose.Schema(
 {
     listId: {

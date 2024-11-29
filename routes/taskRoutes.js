@@ -4,6 +4,7 @@ const Task = require("../models/Task");
 
 const router = express.Router();
 
+// Get all tasks for a list and user
 router.get("/tasks/:listId", authMiddleware, async (req, res) => {
     try {
         const { listId } = req.params;
@@ -18,6 +19,7 @@ router.get("/tasks/:listId", authMiddleware, async (req, res) => {
     }
 });
 
+// Create a new task under a list and user
 router.post("/tasks", authMiddleware, async (req, res) => {
     try {
         const { listId, description } = req.body;
@@ -40,6 +42,7 @@ router.post("/tasks", authMiddleware, async (req, res) => {
     }
 });
 
+// Update a task
 router.put("/tasks/:taskId", authMiddleware, async (req, res) => {
     try {
         const { taskId } = req.params;
@@ -67,6 +70,7 @@ router.put("/tasks/:taskId", authMiddleware, async (req, res) => {
     }
 });
 
+// Delete a task
 router.delete("/tasks/:taskId", authMiddleware, async (req, res) => {
     try {
         const { taskId } = req.params;
